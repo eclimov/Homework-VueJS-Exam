@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import CommonLayout from '@/components/layouts/CommonLayout'
 import Home from '@/views/Home'
-import Issue from "@/views/Issue";
+import Issue from '@/views/Issue'
 
 Vue.use(Router)
 

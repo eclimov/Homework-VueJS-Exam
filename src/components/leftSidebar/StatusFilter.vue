@@ -3,9 +3,9 @@
     <h3>Status</h3>
 
     <v-radio-group v-model="status">
-      <v-radio label="All" value="all"></v-radio>
-      <v-radio label="Open" value="open"></v-radio>
-      <v-radio label="Closed" value="closed"></v-radio>
+      <v-radio label="All" value="all" />
+      <v-radio label="Open" value="open" />
+      <v-radio label="Closed" value="closed" />
     </v-radio-group>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   },
   watch: {
     status: function (val, oldVal) {
-      this.fetch({state: val})
+      this.fetch({ state: val })
     }
   },
   methods: {

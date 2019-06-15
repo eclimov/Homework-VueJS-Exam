@@ -25,7 +25,7 @@
 
             <v-flex xs10>
               <div class="title">
-                <h2>{{issue.state}}</h2>
+                <h2>{{ issue.state }}</h2>
                 <router-link :to="{name: 'issue', params: {id: issue.number}}">
                   {{ issue.title }}
                 </router-link>
@@ -41,57 +41,57 @@
         <v-pagination
           v-model="pageNumber"
           :length="paginationPagesCount"
-        ></v-pagination>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
-  import Progress from '../Progress'
-  import UserPreview from '@/components/user/Preview'
+import { mapActions, mapGetters } from 'vuex'
+import Progress from '../Progress'
+import UserPreview from '@/components/user/Preview'
 
-  export default {
-    name: 'List',
-    components: { Progress, UserPreview },
-    data() {
-      return {
-        pageNumber: parseInt(this.page),
-        issuesPerPage: 3
-      }
-    },
-    watch: {
-      pageNumber: function (val, oldVal) {
-        this.$router.push({ name: 'home', params: { page: val } })
-      }
-    },
-    props: {
-      page: {
-        type: [Number, String],
-        required: true
-      }
-    },
-    computed: {
-      ...mapGetters({
-        issues: 'issues/getList',
-        loading: 'issues/getLoading',
-        getListPaginated: 'issues/getListPaginated'
-      }),
-      paginationPagesCount() {
-        return Math.floor(this.issues.length  / this.issuesPerPage)
-      },
-      issuesPaginated() {
-        return this.getListPaginated({top: this.issuesPerPage, page: this.pageNumber})
-      }
-    },
-    created () {
-      this.fetch()
-    },
-    methods: {
-      ...mapActions({
-        fetch: 'issues/fetch'
-      })
+export default {
+  name: 'List',
+  components: { Progress, UserPreview },
+  props: {
+    page: {
+      type: [Number, String],
+      required: true
     }
+  },
+  data () {
+    return {
+      pageNumber: parseInt(this.page),
+      issuesPerPage: 3
+    }
+  },
+  watch: {
+    pageNumber: function (val, oldVal) {
+      this.$router.push({ name: 'home', params: { page: val } })
+    }
+  },
+  computed: {
+    ...mapGetters({
+      issues: 'issues/getList',
+      loading: 'issues/getLoading',
+      getListPaginated: 'issues/getListPaginated'
+    }),
+    paginationPagesCount () {
+      return Math.floor(this.issues.length / this.issuesPerPage)
+    },
+    issuesPaginated () {
+      return this.getListPaginated({ top: this.issuesPerPage, page: this.pageNumber })
+    }
+  },
+  created () {
+    this.fetch()
+  },
+  methods: {
+    ...mapActions({
+      fetch: 'issues/fetch'
+    })
   }
+}
 </script>

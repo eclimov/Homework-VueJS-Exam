@@ -16,13 +16,13 @@
 
 <script>
 
-  import Header from '@/components/layouts/Header'
-  import LeftSidebar from "@/components/layouts/LeftSidebar";
+import Header from '@/components/layouts/Header'
+import LeftSidebar from '@/components/layouts/LeftSidebar'
 
-  export default {
-    name: 'CommonLayout',
-    components: { Header, LeftSidebar }
-  }
+export default {
+  name: 'CommonLayout',
+  components: { Header, LeftSidebar }
+}
 </script>
 
 <style scoped>

@@ -6,12 +6,12 @@
 
 <script>
 
-  import StatusFilter from "@/components/leftSidebar/StatusFilter";
+import StatusFilter from '@/components/leftSidebar/StatusFilter'
 
-  export default {
-    name: 'LeftSidebar',
-    components: { StatusFilter }
-  }
+export default {
+  name: 'LeftSidebar',
+  components: { StatusFilter }
+}
 </script>
 
 <style scoped>

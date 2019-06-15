@@ -5,8 +5,7 @@
 </template>
 
 <script>
-  import IssueList from '@/components/issues/List'
-
+import IssueList from '@/components/issues/List'
 
 export default {
   name: 'Home',
@@ -19,6 +18,6 @@ export default {
       required: false,
       default: 1
     }
-  },
+  }
 }
 </script>

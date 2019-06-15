@@ -20,7 +20,7 @@ export default {
         })
         .finally(() => commit('mutateLoading', false))
     },
-    async fetchOne({commit}, params) {
+    async fetchOne ({ commit }, params) {
       commit('mutateLoading', true)
       let result = await fetchIssue(params)
       commit('mutateLoading', true)
@@ -39,7 +39,7 @@ export default {
     getById: (state) => (id) => state.list.find(element => element.number === id),
     getList: (state) => state.list,
     getListPaginated: (state) => (params) => {
-      return state.list.slice(params.top*(params.page-1), params.top*params.page);
+      return state.list.slice(params.top * (params.page - 1), params.top * params.page)
     },
     getLoading: (state) => state.loading
   }

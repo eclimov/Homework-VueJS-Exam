@@ -20,15 +20,15 @@
 
 <script>
 
-  export default {
-    name: 'Preview',
-    props: {
-      user: {
-        type: Object,
-        required: true
-      }
+export default {
+  name: 'Preview',
+  props: {
+    user: {
+      type: Object,
+      required: true
     }
   }
+}
 </script>
 
 <style scoped>
