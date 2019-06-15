@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IssueList />
+    <IssueList :page="page" />
   </div>
 </template>
 
@@ -12,6 +12,13 @@ export default {
   name: 'Home',
   components: {
     IssueList
-  }
+  },
+  props: {
+    page: {
+      type: [Number, String],
+      required: false,
+      default: 1
+    }
+  },
 }
 </script>

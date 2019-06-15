@@ -35,6 +35,9 @@ export default {
   getters: {
     getById: (state) => (id) => state.list.find(element => element.number === id),
     getList: (state) => state.list,
+    getListPaginated: (state) => (params) => {
+      return state.list.slice(params.top*(params.page-1), params.top*params.page);
+    },
     getLoading: (state) => state.loading
   }
 }

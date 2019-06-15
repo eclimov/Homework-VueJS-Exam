@@ -1,4 +1,4 @@
-# www
+# vuejs-exam
 
 ## Project setup
 ```

@@ -15,9 +15,11 @@ export default new Router({
       component: CommonLayout,
       children: [
         {
-          path: '',
+          path: '/:page?',
           name: 'home',
-          component: Home
+          component: Home,
+          'params': 'page',
+          props: true
         },
         {
           path: 'issue/:id',
