@@ -25,6 +25,7 @@
 
             <v-flex xs10>
               <div class="title">
+                <h2>{{issue.state}}</h2>
                 <router-link :to="{name: 'issue', params: {id: issue.number}}">
                   {{ issue.title }}
                 </router-link>
@@ -78,7 +79,6 @@
         getListPaginated: 'issues/getListPaginated'
       }),
       paginationPagesCount() {
-        console.log(this.issues.length)
         return Math.floor(this.issues.length  / this.issuesPerPage)
       },
       issuesPaginated() {

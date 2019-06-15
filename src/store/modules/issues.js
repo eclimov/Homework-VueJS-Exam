@@ -15,6 +15,9 @@ export default {
         .then(result => {
           commit('mutateList', result.data)
         })
+        .catch(e => {
+          commit('mutateList', [])
+        })
         .finally(() => commit('mutateLoading', false))
     },
     async fetchOne({commit}, params) {
