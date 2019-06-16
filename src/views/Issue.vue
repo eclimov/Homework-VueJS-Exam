@@ -3,12 +3,14 @@
     <h2>
       {{ issue.title }}
     </h2>
-    <div v-html="issue.body" />
+    <div>
+      {{ issue.body }}
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Issue',
@@ -26,11 +28,6 @@ export default {
     issue () {
       return this.getById(parseInt(this.id)) || false
     }
-  },
-  methods: {
-    ...mapActions({
-      fetchIssue: 'issues/fetchOne'
-    })
   }
 }
 </script>

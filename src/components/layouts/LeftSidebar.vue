@@ -13,6 +13,3 @@ export default {
   components: { StatusFilter }
 }
 </script>
-
-<style scoped>
-</style>

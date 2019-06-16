@@ -49,8 +49,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import Progress from '../Progress'
 import UserPreview from '@/components/user/Preview'
+import Progress from '@/components/Progress'
 
 export default {
   name: 'List',
@@ -67,11 +67,6 @@ export default {
       issuesPerPage: 3
     }
   },
-  watch: {
-    pageNumber: function (val, oldVal) {
-      this.$router.push({ name: 'home', params: { page: val } })
-    }
-  },
   computed: {
     ...mapGetters({
       issues: 'issues/getList',
@@ -83,6 +78,11 @@ export default {
     },
     issuesPaginated () {
       return this.getListPaginated({ top: this.issuesPerPage, page: this.pageNumber })
+    }
+  },
+  watch: {
+    pageNumber: function (val, oldVal) {
+      this.$router.push({ name: 'home', params: { page: val } })
     }
   },
   created () {

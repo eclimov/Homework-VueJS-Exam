@@ -1,5 +1,5 @@
 import {
-  fetchIssues, fetchIssue
+  fetchIssues
 } from '@/api/issues'
 
 export default {
@@ -19,12 +19,6 @@ export default {
           commit('mutateList', [])
         })
         .finally(() => commit('mutateLoading', false))
-    },
-    async fetchOne ({ commit }, params) {
-      commit('mutateLoading', true)
-      let result = await fetchIssue(params)
-      commit('mutateLoading', true)
-      return result.data
     }
   },
   mutations: {

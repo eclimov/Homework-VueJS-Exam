@@ -24,6 +24,3 @@ export default {
   components: { Header, LeftSidebar }
 }
 </script>
-
-<style scoped>
-</style>
